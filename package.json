@@ -1,15 +1,30 @@
 {
-  "name": "backend-server",
-  "version": "1.0.0",
-  "description": "Mooney Agrifarm with express backend",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ],
+  "env": {
+    "MONGO_URI": "@mongo_uri"
   },
-  "keywords": [],
-  "author": "FunnyTooth",
-  "license": "ISC",
   "dependencies": {
+    "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "mongoose": "^8.17.0"
   }
