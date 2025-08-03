@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🌱 Mooney Agrifarm - Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>📊 Mooney Agrifarm - Admin Dashboard</h1>
+        <p>Manage users and contact messages</p>
+        <button id="logoutBtn">🚪 Logout</button>
+    </header>
+
+    <section class="dashboard">
+        <!-- ✅ Users Section -->
+        <div class="card">
+            <h2>👥 Users</h2>
+            <table id="usersTable">
+                <thead>
+                    <tr><th>Name</th><th>Role</th><th>Actions</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- ✅ Messages Section -->
+        <div class="card">
+            <h2>📩 Contact Messages</h2>
+            <table id="messagesTable">
+                <thead>
+                    <tr><th>Name</th><th>Email</th><th>Message</th><th>Date</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        // ✅ Redirect if not logged in
+        if (!localStorage.getItem("adminToken")) {
+            window.location.href = "/admin-login.html";
+        }
+
+        // ✅ Logout functionality
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+            localStorage.removeItem("adminToken");
+            window.location.href = "/admin-login.html";
+        });
+
+        // ✅ Load Users
+        async function loadUsers() {
+            const res = await fetch('/api/users');
+            const users = await res.json();
+            const tbody = document.querySelector("#usersTable tbody");
+            tbody.innerHTML = "";
+            users.forEach(user => {
+                const row = `<tr>
+                    <td>${user.name}</td>
+                    <td>${user.role}</td>
+                    <td><button onclick="deleteUser('${user._id}')">🗑️ Delete</button></td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        }
+
+        // ✅ Load Contact Messages
+        async function loadMessages() {
+            const res = await fetch('/api/contact');
+            const messages = await res.json();
+            const tbody = document.querySelector("#messagesTable tbody");
+            tbody.innerHTML = "";
+            messages.forEach(msg => {
+                const row = `<tr>
+                    <td>${msg.name}</td>
+                    <td>${msg.email}</td>
+                    <td>${msg.message}</td>
+                    <td>${new Date(msg.createdAt).toLocaleString()}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        }
+
+        // ✅ Delete User
+        async function deleteUser(id) {
+            await fetch(`/api/users/${id}`, { method: 'DELETE' });
+            loadUsers();
+        }
+
+        // ✅ Load everything on page load
+        loadUsers();
+        loadMessages();
+    </script>
+</body>
+</html>

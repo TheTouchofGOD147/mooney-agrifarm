@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery - Mooney Agrifarm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.jpeg" type="image/jpeg">
+</head>
+<body>
+
+ <!-- ✅ Modern Navbar -->
+<nav class="navbar modern-nav">
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo.jpeg" alt="Mooney Agrifarm" class="site-logo">
+        </a>
+        Mooney Agrifarm
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li> <!-- ✅ Added this -->
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+    <!-- ✅ New Gallery Carousel -->
+    <section class="gallery-carousel">
+        <h1 class="gallery-title">📸 Mooney Agrifarm Gallery</h1>
+
+        <div class="carousel-container">
+            <button class="carousel-btn prev">❮</button>
+
+            <div class="carousel-track">
+                <div class="carousel-item"><img src="images/maize.jpg" alt="Maize"></div>
+                <div class="carousel-item"><img src="images/goats.jpg" alt="Goats"></div>
+                <div class="carousel-item"><img src="images/honey.jpg" alt="Honey"></div>
+                <div class="carousel-item"><img src="images/vegetables.jpg" alt="Vegetables"></div>
+                <div class="carousel-item"><img src="images/farm1.jpg" alt="Farm"></div>
+                <div class="carousel-item"><img src="images/farm2.jpg" alt="Farm"></div>
+            </div>
+
+            <button class="carousel-btn next">❯</button>
+        </div>
+
+        <!-- ✅ Dots Navigation -->
+        <div class="carousel-dots"></div>
+    </section>
+
+    <!-- ✅ Footer -->
+    <footer class="modern-footer">
+       <p class="tagline">Capturing Our Farm's Journey</p>
+    </footer>
+
+    <!-- ✅ JavaScript for Carousel -->
+    <script src="gallery.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

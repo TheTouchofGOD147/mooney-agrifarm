@@ -1,0 +1,116 @@
+/* ✅ General Dashboard Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5fff0;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ✅ Header */
+header {
+    background: #2e8b57;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+header p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* ✅ Logout Button */
+#logoutBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#logoutBtn:hover {
+    background: #c0392b;
+}
+
+/* ✅ Dashboard Layout */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ✅ Card Styling */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.card h2 {
+    color: #2e8b57;
+    border-bottom: 2px solid #2e8b57;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* ✅ Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+table th {
+    background: #27ae60;
+    color: white;
+}
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* ✅ Delete Button */
+button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+button:hover {
+    background: #c0392b;
+}
+
+/* ✅ Messages Table */
+#messagesTable td {
+    font-size: 13px;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 10px;
+    }
+    .card {
+        padding: 15px;
+    }
+}

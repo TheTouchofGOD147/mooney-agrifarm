@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Mooney Agrifarm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ <!-- ✅ Modern Navbar -->
+<nav class="navbar modern-nav">
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo.jpeg" alt="Mooney Agrifarm" class="site-logo">
+        </a>
+        Mooney Agrifarm
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li> <!-- ✅ Added this -->
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    <!-- ✅ Contact Hero -->
+<header class="contact-hero fade-scroll">
+    <h1 class="contact-title">📬 Get in Touch with Us</h1>
+    <p class="contact-subtitle">We’d love to hear from you. Reach out and we’ll respond promptly.</p>
+</header>
+
+    <!-- ✅ Contact Form Section -->
+    <section class="contact-container">
+        <div class="contact-card">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+                <button type="submit" class="btn-primary">📨 Send Message</button>
+            </form>
+            <p id="responseMsg"></p>
+        </div>
+    </section>
+
+    <!-- ✅ Footer -->
+    <footer class="modern-footer">
+        <p>© 2025 Mooney Agrifarm | Nurturing Growth, Preserving Nature</p>
+    </footer>
+
+    <!-- ✅ Contact Script -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const data = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value
+            };
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+            const result = await res.json();
+            document.getElementById("responseMsg").innerText = result.message;
+            document.getElementById("responseMsg").style.color = "green";
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>

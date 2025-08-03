@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mooney Agrifarm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.jpeg" type="image/jpeg"> <!-- ✅ Use your new logo here -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ✅ Modern Navbar -->
+<nav class="navbar modern-nav">
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo.jpeg" alt="Mooney Agrifarm" class="site-logo">
+        </a>
+        Mooney Agrifarm
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li> <!-- ✅ Added this -->
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    <!-- ✅ Hero Section -->
+    <section class="modern-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>Mooney Agrifarm</h1>
+            <p>Redefining Agriculture • Empowering Farmers • Sustaining Nature</p>
+            <a href="products.html" class="btn-primary">Discover Our Products</a>
+        </div>
+    </section>
+
+    <!-- ✅ About + Mission -->
+    <section class="about-modern">
+        <div class="about-text">
+            <h2>Our Mission</h2>
+            <p>Mooney Agrifarm is dedicated to revolutionizing agriculture through sustainability, innovation, and farmer empowerment. 
+            We provide high-quality organic produce, support local farmers, and implement eco-friendly practices that benefit both people and the planet.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/wheat-1994093_960_720.jpg" alt="Farming Field">
+        </div>
+    </section>
+
+    <!-- ✅ Services Section -->
+    <section class="services-modern">
+        <h2>What We Offer</h2>
+        <div class="service-grid">
+            <div class="service-box">
+                <h3>🌱 Organic Farming</h3>
+                <p>We grow crops naturally, without harmful chemicals, ensuring safe and healthy food for all.</p>
+            </div>
+            <div class="service-box">
+                <h3>🤝 Farmer Support</h3>
+                <p>We help farmers grow exponentially by providing training, resources, and business connections.</p>
+            </div>
+            <div class="service-box">
+                <h3>🍯 Premium Agro-Products</h3>
+                <p>From fresh produce to pure honey, our products are ethically sourced and of the highest quality.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ Call to Action -->
+    <section class="modern-cta">
+        <h2>Grow with Mooney Agrifarm 🌍</h2>
+        <p>Be part of a sustainable agricultural future. Partner with us or explore our organic products today!</p>
+        <a href="contact.html" class="btn-secondary">Contact Us</a>
+    </section>
+
+    <!-- ✅ Footer -->
+    <footer class="modern-footer">
+        <p>© 2025 Mooney Agrifarm | Nurturing Growth, Preserving Nature</p>
+        <p><a href="admin-login.html">Admin Panel</a></p>
+    </footer>
+
+    <!-- ✅ Optional Animation Script -->
+    <script>
+        // Simple fade-in when sections come into view
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 1.5s ease forwards';
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(sec => observer.observe(sec));
+    </script>
+    <script src="animations.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
