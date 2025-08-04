@@ -81,3 +81,47 @@ img {
     text-align: center;
   }
 }
+/* ==== Fix Logo Size & Navbar ==== */
+.logo img {
+  max-width: 120px;       /* Adjust logo width */
+  max-height: 60px;       /* Prevents it from stretching */
+  height: auto;
+}
+
+/* Navbar fix */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2f7d32;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .logo img {
+    max-width: 90px;
+    max-height: 50px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+}
