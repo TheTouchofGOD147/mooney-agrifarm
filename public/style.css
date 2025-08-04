@@ -1,5 +1,5 @@
 /* =========================
-   General Reset & Base
+   Global Reset & Body
 ========================= */
 * {
   margin: 0;
@@ -9,104 +9,165 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  background: #f8f8f8;
+  background: #f9f9f9;
   color: #333;
-  padding-top: 70px; /* space for navbar */
+  line-height: 1.6;
+  font-size: 16px;
+  padding-top: 60px; /* Space for fixed navbar */
 }
 
 /* =========================
-   Navbar Styling
+   Navbar
 ========================= */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   background: #2e7d32;
+  padding: 12px 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+  justify-content: center;
   z-index: 1000;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .navbar li {
-  margin: 0 10px;
+  margin: 0 12px;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .navbar a:hover,
 .navbar a.active {
-  color: #ffcc00;
+  color: #ffeb3b;
 }
 
 /* =========================
-   Hero / Section Headings
+   Hero Section
 ========================= */
-header, section {
-  padding: 40px 20px;
+header {
+  background: #e8f5e9;
   text-align: center;
+  padding: 50px 20px;
 }
 
-h1, h2, h3 {
+header h1 {
+  font-size: 2.5em;
   color: #2e7d32;
-  margin-bottom: 15px;
+}
+
+header p {
+  font-size: 1.1em;
+  color: #555;
+  margin-top: 8px;
 }
 
 /* =========================
-   CEO & Blog Sections
+   CEO Page Styling
 ========================= */
-.ceo-section, .blog-section {
-  max-width: 900px;
-  margin: 0 auto;
+.about-ceo {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
   padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.ceo-section img {
-  width: 150px;
-  border-radius: 50%;
-  display: block;
-  margin: 10px auto 20px;
+.ceo-img {
+  flex: 1 1 300px;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-blockquote {
+.ceo-content {
+  flex: 2 1 500px;
+}
+
+.ceo-content h2,
+.ceo-content h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.ceo-content p {
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.inspire-quote {
   font-style: italic;
-  color: #555;
-  border-left: 4px solid #2e7d32;
-  padding-left: 10px;
+  background: #f1f8e9;
+  border-left: 4px solid #4caf50;
+  padding: 12px;
+  color: #1b5e20;
   margin: 20px 0;
 }
 
 /* =========================
-   Blog Cards
+   Blog Page Styling
 ========================= */
+.blog-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.blog-section h1 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.blog-section p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #555;
+}
+
 .blog-card {
   background: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
+.blog-card h3 {
+  color: #1b5e20;
+  margin-bottom: 8px;
+}
+
+.blog-card p {
+  color: #444;
+}
+
 .blog-card a {
+  display: inline-block;
+  margin-top: 10px;
   color: #2e7d32;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
+}
+
+.blog-card a:hover {
+  text-decoration: underline;
 }
 
 /* =========================
@@ -117,33 +178,54 @@ footer {
   color: white;
   text-align: center;
   padding: 15px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 /* =========================
-   RESPONSIVE DESIGN
+   Buttons
+========================= */
+.btn-link {
+  display: inline-block;
+  background: #2e7d32;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-link:hover {
+  background: #1b5e20;
+}
+
+/* =========================
+   Images (Prevent Oversize)
+========================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   Responsive Fixes
 ========================= */
 @media (max-width: 768px) {
-  body {
-    font-size: 16px;
+  .about-ceo {
+    flex-direction: column;
+    text-align: center;
+  }
+  .ceo-img {
+    margin: 0 auto 15px;
   }
   .navbar ul {
     flex-direction: column;
-    background: #2e7d32;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    width: 100%;
-    display: none;
   }
   .navbar li {
-    padding: 10px 0;
-    text-align: center;
+    margin: 8px 0;
   }
-}
-
-@media (max-width: 480px) {
-  h1 { font-size: 22px; }
-  h2 { font-size: 18px; }
-  p { font-size: 14px; }
+  .blog-section {
+    width: 90%;
+  }
 }
