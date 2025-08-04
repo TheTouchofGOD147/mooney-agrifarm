@@ -229,3 +229,23 @@ img {
     width: 90%;
   }
 }
+
+/* Ensure the logo doesn't overflow */
+.logo img {
+  max-width: 180px;
+  height: auto;
+  display: block;
+}
+
+/* Constrain page container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Ensure body content fits */
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
