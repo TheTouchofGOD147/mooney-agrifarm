@@ -267,3 +267,30 @@ footer {
 .news-btn:hover {
     background: #1b5e20;
 }
+/* ✅ Ensure all images scale properly */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ✅ Specifically control logo size */
+.site-logo {
+  max-width: 150px;   /* Adjust as needed */
+  height: auto;
+}
+
+/* ✅ Add container padding on all devices */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ✅ Responsive container to prevent overflow */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
