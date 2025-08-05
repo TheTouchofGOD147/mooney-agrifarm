@@ -1,64 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Testimonials - Mooney Agrifarm</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.jpeg" type="image/jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials - Mooney Agrifarm</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- ✅ Navbar -->
-    <nav class="navbar modern-nav">
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo.jpeg" alt="Mooney Agrifarm" class="site-logo">
-            </a>
-            Mooney Agrifarm
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="testimonials.html" class="active">Testimonials</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Mooney Agrifarm</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="ceo.html">CEO</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a class="active" href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- ✅ Testimonials Section -->
-    <section class="testimonials-section">
-        <h1 class="section-title">🌟 What Farmers Say About Us</h1>
-        <p class="tagline">Empowering Agriculture • Empowering Farmers</p>
+  <main class="testimonials-section">
+    <h2>💬 Farmers & Consumers Trust Mooney Agrifarm</h2>
 
-        <div class="testimonials-container">
-            <div class="testimonial-card">
-                <img src="images/farmer1.jpg" alt="Farmer">
-                <h3>John Doe</h3>
-                <p>"Mooney Agrifarm changed the way I farm. Their organic methods increased my yield by 40%!"</p>
-                <span class="date">Feb 2025</span>
-            </div>
+    <div class="testimonial-container">
+      <div class="testimonial-card">
+        <p>"As a farmer in Texas, I've never had better support for sustainable farming."</p>
+        <h4>- John Miller, TX</h4>
+      </div>
 
-            <div class="testimonial-card">
-                <img src="images/farmer2.jpg" alt="Farmer">
-                <h3>Grace Nwosu</h3>
-                <p>"Their support programs are excellent. I received free training and access to better seeds."</p>
-                <span class="date">Jan 2025</span>
-            </div>
+      <div class="testimonial-card">
+        <p>"The training sessions from Mooney Agrifarm boosted my farm’s productivity by 30%!"</p>
+        <h4>- Sarah Johnson, IA</h4>
+      </div>
 
-            <div class="testimonial-card">
-                <img src="images/farmer3.jpg" alt="Farmer">
-                <h3>Ahmed Bello</h3>
-                <p>"Partnering with Mooney Agrifarm helped me access new markets for my produce. Highly recommended!"</p>
-                <span class="date">Dec 2024</span>
-            </div>
-        </div>
-    </section>
+      <div class="testimonial-card">
+        <p>"I rely on their organic products for my restaurant in California. Always top quality."</p>
+        <h4>- David Brown, CA</h4>
+      </div>
 
-    <!-- ✅ Footer -->
-    <footer class="modern-footer">
-        <p>© 2025 Mooney Agrifarm | Nurturing Growth, Preserving Nature</p>
-    </footer>
-<script src="scripts.js"></script>
+      <div class="testimonial-card">
+        <p>"Their pure honey is unmatched! My customers love it, and so do I."</p>
+        <h4>- Emily Carter, NY</h4>
+      </div>
+
+      <div class="testimonial-card">
+        <p>"Switching to Mooney Agrifarm products helped me meet organic certification standards."</p>
+        <h4>- Michael Lee, OR</h4>
+      </div>
+
+      <!-- Add more testimonials up to 15 like above -->
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="testimonial-nav">
+      <button id="prevTestimonial">⬅ Prev</button>
+      <button id="nextTestimonial">Next ➡</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Mooney Agrifarm | Nurturing Growth, Preserving Nature</p>
+  </footer>
+
+  <script>
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    let index = 0;
+
+    function showTestimonial(i) {
+      testimonials.forEach((t, idx) => {
+        t.style.display = idx === i ? 'block' : 'none';
+      });
+    }
+
+    document.getElementById('nextTestimonial').addEventListener('click', () => {
+      index = (index + 1) % testimonials.length;
+      showTestimonial(index);
+    });
+
+    document.getElementById('prevTestimonial').addEventListener('click', () => {
+      index = (index - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(index);
+    });
+
+    showTestimonial(index);
+  </script>
 </body>
 </html>

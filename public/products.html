@@ -1,73 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Our Products - Mooney Agrifarm</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.jpeg" type="image/jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - Mooney Agrifarm</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- ✅ Navbar -->
-    <nav class="navbar modern-nav">
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo.jpeg" alt="Mooney Agrifarm" class="site-logo">
-            </a>
-            Mooney Agrifarm
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="product.html" class="active">Products</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+  <header class="navbar">
+    <div class="logo">Mooney Agrifarm</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="ceo.html">CEO</a></li>
+        <li><a class="active" href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- ✅ Products Section -->
-    <section class="products-section">
-        <h1 class="section-title">🌾 Our Organic Farm Products</h1>
-        <p class="tagline">Freshly grown and ethically sourced from Mooney Agrifarm.</p>
+  <section class="products-section">
+    <h1>🌱 Our Organic Products</h1>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="images/maize.jpeg" alt="Organic Maize">
+        <h3>Organic Maize</h3>
+        <p>High-quality organic maize grown with sustainable practices.</p>
+        <button class="order-btn" data-product="Organic Maize">Order Now</button>
+      </div>
 
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="images/maize.jpg" alt="Maize">
-                <h3>🌽 Organic Maize</h3>
-                <p>High-quality maize grown with zero pesticides.</p>
-                <button class="btn-order">Request Order</button>
-            </div>
+      <div class="product-card">
+        <img src="images/honey.jpeg" alt="Pure Honey">
+        <h3>Pure Honey</h3>
+        <p>100% natural honey with exceptional taste and health benefits.</p>
+        <button class="order-btn" data-product="Pure Honey">Order Now</button>
+      </div>
 
-            <div class="product-card">
-                <img src="images/goats.jpg" alt="Goats">
-                <h3>🐐 Healthy Goats</h3>
-                <p>Grass-fed goats raised naturally on our farm.</p>
-                <button class="btn-order">Request Order</button>
-            </div>
+      <div class="product-card">
+        <img src="images/vegetables.jpeg" alt="Fresh Vegetables">
+        <h3>Fresh Vegetables</h3>
+        <p>Organic vegetables packed with nutrients, directly from our farm.</p>
+        <button class="order-btn" data-product="Fresh Vegetables">Order Now</button>
+      </div>
+    </div>
+  </section>
 
-            <div class="product-card">
-                <img src="images/honey.jpg" alt="Honey">
-                <h3>🍯 Pure Honey</h3>
-                <p>Pure honey harvested directly from our beehives.</p>
-                <button class="btn-order">Request Order</button>
-            </div>
+  <!-- 🔥 Popup Modal Order Form -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Place Your Order</h2>
+      <form id="orderForm">
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="order" id="Order" placeholder="Order" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="address" placeholder="Home Address" required>
+        <input type="hidden" id="productName">
+        <button type="submit" class="submit-order">Submit Order</button>
+      </form>
+    </div>
+  </div>
 
-            <div class="product-card">
-                <img src="images/vegetables.jpg" alt="Vegetables">
-                <h3>🥦 Fresh Vegetables</h3>
-                <p>Fresh vegetables cultivated with care and love.</p>
-                <button class="btn-order">Request Order</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ✅ Footer -->
-    <footer class="modern-footer">
-        <p>© 2025 Mooney Agrifarm | Nurturing Growth, Preserving Nature</p>
-    </footer>
-
+  <script src="products.js"></script>
 </body>
 </html>
