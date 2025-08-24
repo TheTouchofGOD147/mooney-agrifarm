@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     baseProfile="tiny-ps" version="1.2"
+     viewBox="0 0 256 256">
+  <title>Mooney Agrifarm</title>
+  <desc>Official brand logo for BIMI display</desc>
+
+  <!-- Solid green background -->
+  <rect x="0" y="0" width="256" height="256" fill="#7AC143"/>
+
+  <!-- White MOONEY text (simplified) -->
+  <text x="40" y="80" font-family="Arial" font-size="48" fill="#FFFFFF">MOO</text>
+  <text x="40" y="140" font-family="Arial" font-size="48" fill="#FFFFFF">NE</text>
+  <text x="40" y="200" font-family="Arial" font-size="48" fill="#FFFFFF">Y</text>
+</svg>
